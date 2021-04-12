@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+mat-sidenav-content {
+  min-height: 100vh;
+}
+
+mat-sidenav {
+  width: 280px;
+}
+
+mat-toolbar {
+  min-height: 48px;
+  background-color: #5c4dbd;
+}
+
+.button-menu button {
+  background: none;
+  color: aliceblue;
+  border-style: none;
+}
+
+.button-close button {
+  background: none;
+  color: black;
+  border-style: none;
+  left: 220px;
+  position: relative;
+}
+
+.title span {
+  font-size: 2.3rem;
+  color: aliceblue;
+  position: relative;
+  left: 30px;
+}

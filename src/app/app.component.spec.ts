@@ -1,15 +1,26 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
+import { MockComponents } from 'ng-mocks';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MockComponents(
+          MatIcon,
+          MatSidenav,
+          MatToolbar,
+          MatSidenavContent,
+          MatSidenavContainer
+        )
       ],
     }).compileComponents();
   });
@@ -26,10 +37,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('PetStore');
   });
 
-  it('should render title', () => {
+  it('should render title in mat-toolbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('PetStore app is running!');
+    expect(compiled.querySelector('mat-sidenav-content span').textContent).toContain('Pet Store');
   });
 });
