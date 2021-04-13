@@ -28,6 +28,10 @@ mat-toolbar {
   border-style: none;
   left: 220px;
   position: relative;
+
+  mat-icon {
+    font-size: 0.9rem;
+  }
 }
 
 .title span {
