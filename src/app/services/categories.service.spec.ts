@@ -4,11 +4,10 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 
 import { CategoriesService } from './categories.service';
-import { HttpClient } from '@angular/common/http';
+
 
 describe('CategoriesService', () => {
   let service: CategoriesService;
-  let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {

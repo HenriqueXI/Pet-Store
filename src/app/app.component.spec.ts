@@ -5,6 +5,7 @@ import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/mat
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { MockComponents } from 'ng-mocks';
+import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -19,7 +20,8 @@ describe('AppComponent', () => {
           MatSidenav,
           MatToolbar,
           MatSidenavContent,
-          MatSidenavContainer
+          MatSidenavContainer,
+
         )
       ],
     }).compileComponents();

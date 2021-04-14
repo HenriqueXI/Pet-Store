@@ -1,33 +1,36 @@
+<section class = "webviwer">
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over">
-    <mat-toolbar>
-      <div class="button-close">
-        <button class="close" mat-icon-button class="example-icon" (click)="sidenav.toggle()">
-          <mat-icon>X</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar>
-    <p>
-      Menu ira ficar aqui
-    </p>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <!-- Botão para abrir e fechar o menu -->
 
-    <mat-toolbar>
-      <div class="button-menu">
-        <button mat-icon-button aria-label="Menu" class="header-button" (click)="sidenav.toggle()">
-          <mat-icon aria-label="Menu">menu</mat-icon>
-        </button>
-      </div>
-      <div class="title">
-        <span>Pet Store</span>
-        <span class="example-spacer"></span>
-      </div>
-    </mat-toolbar>
-    <!-- Router outlet que ira renderizar as paginas -->
-    <router-outlet></router-outlet>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over">
+      <mat-toolbar>
+        <div class="button-close">
+          <button class="close" mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+            <mat-icon>X</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>
+      <p>
+        Menu ira ficar aqui
+      </p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Botão para abrir e fechar o menu -->
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      <mat-toolbar>
+        <div class="button-menu">
+          <button mat-icon-button aria-label="Menu" class="header-button" (click)="sidenav.toggle()">
+            <mat-icon aria-label="Menu">menu</mat-icon>
+          </button>
+        </div>
+        <div class="title">
+          <span>Pet Store</span>
+          <span class="example-spacer"></span>
+        </div>
+      </mat-toolbar>
+      <!-- Router outlet que ira renderizar as paginas -->
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

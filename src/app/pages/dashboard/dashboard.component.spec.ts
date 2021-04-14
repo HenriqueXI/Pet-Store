@@ -1,6 +1,7 @@
+import { MockComponents } from 'ng-mocks';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DashboardComponent } from './dashboard.component';
+import { CategoriesFeaturedComponent } from 'src/app/components/categories-featured/categories-featured.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +9,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ DashboardComponent, MockComponents(CategoriesFeaturedComponent) ]
     })
     .compileComponents();
   });

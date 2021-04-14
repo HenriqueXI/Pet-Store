@@ -3,12 +3,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     DashboardComponent,
+    CategoriesFeaturedComponent,
 
   ],
   imports: [
@@ -27,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
