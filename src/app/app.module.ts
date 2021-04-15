@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductComponent } from './pages/product/product.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     DashboardComponent,
     CategoriesFeaturedComponent,
     ProductItemComponent,
+    ProductComponent,
 
   ],
   imports: [

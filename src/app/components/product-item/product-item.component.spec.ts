@@ -28,8 +28,6 @@ const product: Product = {
 describe('ProductItemComponent', () => {
   let component: ProductItemComponent;
   let fixture: ComponentFixture<ProductItemComponent>;
-  let matCardTitle: HTMLElement;
-  let p: HTMLElement;
 
 
 
@@ -64,14 +62,14 @@ describe('ProductItemComponent', () => {
 
   it('should show component mat-card-title in html', () => {
     fixture.detectChanges();
-    matCardTitle = fixture.nativeElement.querySelector('mat-card-title');
+    let matCardTitle = fixture.nativeElement.querySelector('mat-card-title');
     expect(matCardTitle.textContent).toContain('Product');
   });
 
   it('should show component p in html', () => {
     fixture.detectChanges();
-    p = fixture.nativeElement.querySelector('p');
-    expect(p.textContent).toContain('204.9');
+    let p = document.getElementsByClassName('container-value');
+    expect(p[0].getElementsByTagName('p')[0].textContent).toContain('204.9');
   });
 
   it('should show stars with 3.5 rating star', () => {
@@ -82,12 +80,12 @@ describe('ProductItemComponent', () => {
 
     const html = fixture.nativeElement;
     // Obtendo todos os matIcons no html
-    const matIcons = document.getElementsByTagName('mat-icon');
+    const matIcons = document.querySelectorAll('mat-icon');
     // Checando todos os icones
     expect(matIcons[0].textContent.trim()).toEqual('star');
     expect(matIcons[1].textContent.trim()).toEqual('star');
     expect(matIcons[2].textContent.trim()).toEqual('star');
-    expect(matIcons[3].textContent.trim()).toEqual('star_border');
+    expect(matIcons[3].textContent.trim()).toEqual('star_half');
     expect(matIcons[4].textContent.trim()).toEqual('star_border');
   });
 });
