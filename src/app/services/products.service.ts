@@ -18,7 +18,7 @@ export class ProductsService {
   getProduct(): Observable<Product[]> {
     return new Observable<Product[]>(observer => {
         // Faça o importe do environment para poder adicionar a url da aplicação
-        this.http.get<Product[]>(`${environment.apiUrl}v1/products`).subscribe(
+        this.http.get<Product[]>(`${environment.apiUrl}v1/products-highlights`).subscribe(
           products => {
             observer.next(products);
             observer.complete();

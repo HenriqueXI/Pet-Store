@@ -1,27 +1,27 @@
 export interface Product {
-    "id": "fsertsdgfdg",
-    "name": "Food",
-    "description": string,
-    "value": 0,
-    "promotional_value": 0,
-    "featured_image": string,
-    "images": [
+    id: string,
+    name: string,
+    description: string,
+    value: number,
+    promotional_value: number,
+    featured_image: string,
+    images: [
       string
     ],
-    "videos": [
+    videos: [
       string
     ],
-    "raging_stars": 0,
-    "raging_count": 0,
-    "installment_available": true,
-    "installment_count": 0,
-    "featured": true,
-    "category": string,
-    "subcategory": string,
-    "animal_type": "cachorro",
-    "status": string,
-    "url": string,
-    "created_at": string
+    rating_stars: number,
+    rating_count: number,
+    installment_available: true,
+    installment_count: number,
+    featured: true,
+    category: string,
+    subcategory: string,
+    animal_type: AnimalType,
+    status: string,
+    url: string,
+    created_at: string
 }
 
 export interface productGetResponse{

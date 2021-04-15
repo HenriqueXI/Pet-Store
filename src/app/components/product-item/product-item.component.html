@@ -1,0 +1,32 @@
+
+<mat-card class="mat-card mat-focus-indicator">
+  <img [src]='product.featured_image' [alt]="product.name">
+  <mat-card-title>
+    {{ product.name }}
+  </mat-card-title>
+  <mat-card-content >
+    <div *ngFor="let star of [1, 2, 3, 4, 5]"  class="stars">
+      <mat-icon role="img">
+        <ng-container *ngIf="product.rating_stars > star">
+          star
+        </ng-container>
+        <ng-container *ngIf="product.rating_stars == star">
+          star_half
+        </ng-container>
+        <ng-container *ngIf="product.rating_stars < star">
+          star_border
+        </ng-container>
+      </mat-icon>
+    </div>
+    <div class="container-value">
+      <p>
+        R$ {{ product.value | currency: "BRL"}}
+      </p>
+    </div>
+    <div class="installment">
+      <p>
+        {{product.installment_count}}x
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>

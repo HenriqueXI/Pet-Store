@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CategoriesFeaturedComponent } from './components/categories-featured/ca
     AppComponent,
     DashboardComponent,
     CategoriesFeaturedComponent,
+    ProductItemComponent,
 
   ],
   imports: [
