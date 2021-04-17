@@ -1,5 +1,5 @@
 
-<mat-card class="mat-card mat-focus-indicator">
+<mat-card [routerLink]="['/product', product.id]" class="mat-card mat-focus-indicator">
   <img [src]='product.featured_image' [alt]="product.name">
   <mat-card-title>
     {{ product.name }}

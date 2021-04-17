@@ -1,3 +1,6 @@
+import { ProductItemComponent } from 'src/app/components/product-item/product-item.component';
+import { ProductComponent } from './pages/product/product.component';
+import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -6,6 +9,7 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { MockComponents } from 'ng-mocks';
 import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
+import { RouterLink } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,13 +19,21 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+        CategoriesFeaturedComponent,
+        ProductComponent,
+        ProductItemComponent,
+        RouterLink,
         MockComponents(
           MatIcon,
           MatSidenav,
           MatToolbar,
           MatSidenavContent,
           MatSidenavContainer,
-
+          MatIcon,
+          MatCardTitle,
+          MatCard,
+          MatCardContent,
+          RouterLink
         )
       ],
     }).compileComponents();

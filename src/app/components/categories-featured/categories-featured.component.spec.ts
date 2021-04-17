@@ -1,5 +1,9 @@
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIcon } from '@angular/material/icon';
+import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MockComponents } from 'ng-mocks';
 import { CategoriesServiceMoks } from 'src/app/mocks-service/categories-mocks';
 import { CategoriesService } from 'src/app/services/categories.service';
 
@@ -13,7 +17,9 @@ describe('CategoriesFeaturedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategoriesFeaturedComponent ],
+      declarations: [
+        CategoriesFeaturedComponent,
+       ],
       providers: [
         {
           provide: CategoriesService,

@@ -1,3 +1,4 @@
+import { environments } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -29,5 +30,20 @@ export class ProductsService {
           }
         )
     });
+  }
+
+  getProducts(id: string): Observable<Product> {
+    return new Observable<Product>(observer => {
+      this.http.get<Product>(`${environments.apiUrl}v1/product/${id}`).subscribe(
+        products =>{
+          observer.next(products);
+          observer.complete();
+        },
+        error => {
+          observer.next(error);
+          observer.complete();
+        }
+      )
+    })
   }
 }

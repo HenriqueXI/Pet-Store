@@ -1,6 +1,13 @@
+import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { AnimalType, Product } from './../../interfaces/product';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductItemComponent } from './product-item.component';
+import { MockComponents } from 'ng-mocks';
+import { MatIcon } from '@angular/material/icon';
+import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
+import { MatToolbar } from '@angular/material/toolbar';
+
+
 
 
 const product: Product = {
@@ -33,7 +40,20 @@ describe('ProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductItemComponent ],
+      declarations: [
+        ProductItemComponent,
+        MockComponents(
+          MatIcon,
+          MatSidenav,
+          MatToolbar,
+          MatSidenavContent,
+          MatSidenavContainer,
+          MatIcon,
+          MatCardTitle,
+          MatCard,
+          MatCardContent,
+        )
+      ],
 
     })
     .compileComponents();

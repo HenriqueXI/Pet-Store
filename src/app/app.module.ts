@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ProductComponent } from './pages/product/product.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ProductComponent } from './pages/product/product.component';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    NgxUsefulSwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

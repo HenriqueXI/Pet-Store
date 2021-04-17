@@ -3,8 +3,16 @@ import { AnimalType, Product } from "../interfaces/product";
 
 
 
+
 export class ProductsServiceMock{
 
+  product!: Product;
+  getProducts(id: string): Observable<Product> {
+    return new Observable<Product>(observer => {
+      observer.next(this.product);
+      observer.complete();
+    });
+}
   getProduct(): Observable<Product[]> {
     return new Observable<Product[]>(observer => {
       observer.next([

@@ -1,4 +1,4 @@
-export const environment = {
+export const environments = {
   production: true,
-  apiUrl: (`https://petshop-sp.ue.r.appspot.com/`)
+  apiUrl: (`http://petshop-sp.ue.r.appspot.com/`)
 };
