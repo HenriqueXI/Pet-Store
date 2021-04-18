@@ -1,0 +1,43 @@
+<div class="container grid banner-container">
+  <div class="row">
+    <div class="col-12">
+      <form class="contact-form" [formGroup]="formGroup">
+
+        <h1 class="title">Contato</h1>
+
+        <mat-form-field class="name full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input formControlName="name" matInput minlength="3" maxlength="40">
+          <mat-error *ngIf="formGroup.get('name').hasError('required')">Nome é obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="email full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput>
+          <mat-error *ngIf="formGroup.get('email').hasError('required')">O Email é obrigatório</mat-error>
+          <mat-error *ngIf="formGroup.get('email').hasError('email') || formGroup.get('email').hasError('pattern')">
+            Email inválido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="phone full-width" appearance="fill">
+          <mat-label>Número</mat-label>
+          <input formControlName="phone" matInput>
+          <mat-error *ngIf="formGroup.get('phone').hasError('required')">O Número é obrigatório</mat-error>
+          <mat-error *ngIf="formGroup.get('phone').hasError('pattern')">
+            O número é inválido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="message full-width" appearance="fill">
+          <mat-label>Menssagem</mat-label>
+          <input formControlName="message" matInput>
+          <mat-error *ngIf="formGroup.get('email').hasError('required')">A menssagem é obrigatória</mat-error>
+        </mat-form-field>
+
+        <button class="mat-focus-indicator mat-button mat-button-base" (click)="sendForm()" mat-button>Enviar</button>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.contact-form {
+  display: grid;
+  max-width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+button {
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+
+  &:hover {
+    background-color: #ddf5f5;
+  }
+}

@@ -23,6 +23,10 @@ mat-toolbar {
   background: none;
   color: aliceblue;
   border-style: none;
+  cursor: pointer;
+  &:hover {
+    border-style: groove;
+  }
 }
 
 .button-close button {
@@ -31,6 +35,11 @@ mat-toolbar {
   border-style: none;
   left: 220px;
   position: relative;
+  cursor: pointer;
+
+  &:hover {
+    border-style: groove;
+  }
 
   mat-icon {
     font-size: 0.9rem;
@@ -42,4 +51,19 @@ mat-toolbar {
   color: aliceblue;
   position: relative;
   left: 30px;
+}
+
+.menu button {
+  width: 100%;
+  padding: 16px;
+  line-height: 36px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  overflow: visible;
+  border-radius: 4px;
+  box-sizing: border-box;
+  &:hover {
+    background: #eae9ee;
+  }
 }

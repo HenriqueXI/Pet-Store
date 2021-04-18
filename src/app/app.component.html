@@ -10,9 +10,9 @@
           </button>
         </div>
       </mat-toolbar>
-      <p>
-        Menu ira ficar aqui
-      </p>
+      <div class="container grid menu" *ngFor="let menu of menus">
+        <button class="menu-button" mat-icon-button [routerLink]="[menu.router]">{{menu.name}}</button>
+      </div>
     </mat-sidenav>
     <mat-sidenav-content>
       <!-- Botão para abrir e fechar o menu -->

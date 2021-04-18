@@ -1,3 +1,5 @@
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,4 +10,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'PetStore';
+  menus = [
+    {'name': 'Home', 'router': '/'},
+    {'name': 'Contato', 'router': '/contact'}
+  ]
 }

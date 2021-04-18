@@ -1,9 +1,11 @@
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,9 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { ProductComponent } from './pages/product/product.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -28,6 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductItemComponent,
     ProductComponent,
     FooterComponent,
+    ContactComponent,
 
   ],
   imports: [
@@ -39,9 +45,14 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     HttpClientModule,
     MatCardModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule {
