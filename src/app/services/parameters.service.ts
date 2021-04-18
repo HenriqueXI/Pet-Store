@@ -15,10 +15,10 @@ export class ParametersService {
   ) {}
 
 
-  getParameters(): Observable<Parameters[]> {
-    return new Observable<Parameters[]>(observer => {
+  getParameters(): Observable<Parameters> {
+    return new Observable<Parameters>(observer => {
         // Faça o importe do environment para poder adicionar a url da aplicação
-        this.http.get<Parameters[]>(`${environment.apiUrl}v1/parameters`).subscribe(
+        this.http.get<Parameters>(`${environment.apiUrl}v1/parameters`).subscribe(
           parameters => {
             observer.next(parameters);
             observer.complete();

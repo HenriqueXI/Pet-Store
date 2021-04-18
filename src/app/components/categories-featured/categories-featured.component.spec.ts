@@ -24,7 +24,8 @@ describe('CategoriesFeaturedComponent', () => {
         {
           provide: CategoriesService,
           useClass: CategoriesServiceMoks
-        }
+        },
+
       ]
     })
     .compileComponents();

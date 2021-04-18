@@ -1,0 +1,46 @@
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 20px;
+  background: none;
+
+  .container {
+    .grid {
+      .image {
+        img {
+          width: 200px;
+          height: 100px;
+          background-color: #f0f8ff;
+        }
+      }
+    }
+  }
+
+  .redes {
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+
+    a {
+      color: -webkit-link;
+      cursor: pointer;
+      text-decoration: underline;
+      margin: 10px;
+    }
+  }
+}
+
+h5 {
+  font-size: 1.5rem;
+  margin: auto;
+  width: 80px;
+  padding: 32px 0;
+  text-align: center;
+}

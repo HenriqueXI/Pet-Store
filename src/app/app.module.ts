@@ -14,6 +14,7 @@ import { CategoriesFeaturedComponent } from './components/categories-featured/ca
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     CategoriesFeaturedComponent,
     ProductItemComponent,
     ProductComponent,
+    FooterComponent,
 
   ],
   imports: [

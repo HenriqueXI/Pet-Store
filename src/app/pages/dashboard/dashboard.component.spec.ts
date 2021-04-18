@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import { CategoriesFeaturedComponent } from 'src/app/components/categories-featured/categories-featured.component';
 import { ProductsServiceMock } from 'src/app/mocks-service/ProductsServiceMock';
 import { ProductsService } from 'src/app/services/products.service';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -15,7 +16,8 @@ describe('DashboardComponent', () => {
       declarations: [
         DashboardComponent,
         MockComponents(CategoriesFeaturedComponent),
-        MockComponents(ProductItemComponent)
+        MockComponents(ProductItemComponent),
+        MockComponents(FooterComponent)
        ],
        providers: [
         {
