@@ -43,7 +43,7 @@ describe('CategoriesFeaturedComponent', () => {
   it('should show component title in html', () => {
     fixture.detectChanges();
     h2 = fixture.nativeElement.querySelector('h2');
-    expect(h2.textContent).toContain('Categorias e destaque');
+    expect(h2.textContent).toContain('Categorias em destaque');
   });
 
   it('should check category card item count in HTML', () => {

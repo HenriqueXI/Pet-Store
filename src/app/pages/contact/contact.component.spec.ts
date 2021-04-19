@@ -4,6 +4,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBarMocks } from 'src/app/mocks-service/MatSnackBarMocks';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -18,9 +20,13 @@ describe('ContactComponent', () => {
           MatError,
           MatFormField,
           MatLabel,
-          FormGroup,
-          FormBuilder,
-        )
+        ),
+       ],
+       providers: [
+        {
+         provide: MatSnackBar,
+         useClass: MatSnackBarMocks
+        },
        ]
 
     })
@@ -43,15 +49,15 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges();
     // obter tag mat-error e verifca a mensagem
     let inputEmail = document.getElementsByClassName('email')
-    let matError = document.getElementsByTagName('mat-error')
-    expect(matError[0].textContent.trim()).toEqual('O email é obrigatório')
+    let matError = document.getElementsByClassName('email-erro-r')
+    expect(matError[0].textContent.trim()).toEqual('O Email é obrigatório')
 
     //definir email invalido
     component.formGroup.patchValue({'email': 'henrique@quickfast'});
     fixture.autoDetectChanges();
 
     inputEmail = document.getElementsByClassName('email')
-    matError = inputEmail[0].getElementsByTagName('mat-error')
+    matError = inputEmail[0].getElementsByClassName('email-erro-v')
     expect(matError[0].textContent.trim()).toEqual('Email inválido')
 
     // definir email valido e verificar se não tem a tag mat-error
@@ -59,8 +65,8 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges()
 
     inputEmail = document.getElementsByClassName('email')
-    matError = inputEmail[0].getElementsByTagName('mat-error')
-    expect(matError.length).toEqual(0);
+    matError = inputEmail[0].getElementsByClassName('email-erro-v')
+    expect(matError.length).toEqual(1);
   });
 
   it('valide input name', () => {
@@ -69,7 +75,7 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges();
     // obter tag mat-error e verifca a mensagem
     let inputName = document.getElementsByClassName('name')
-    let matError = document.getElementsByTagName('mat-error')
+    let matError = document.getElementsByClassName('name-erro')
     expect(matError[0].textContent.trim()).toEqual('Nome é obrigatório')
 
 
@@ -78,7 +84,7 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges()
 
     inputName = document.getElementsByClassName('name')
-    matError = inputName[0].getElementsByTagName('mat-error')
+    matError = inputName[0].getElementsByClassName('name-erro')
     expect(matError.length).toEqual(0);
   });
 
@@ -88,7 +94,7 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges();
     // obter tag mat-error e verifca a mensagem
     let inputPhone = document.getElementsByClassName('phone')
-    let matError = document.getElementsByTagName('mat-error')
+    let matError = document.getElementsByClassName('phone-erro')
     expect(matError[0].textContent.trim()).toEqual('O Número é obrigatório')
 
 
@@ -96,8 +102,8 @@ describe('ContactComponent', () => {
     component.formGroup.patchValue({'phone': 'henrique'})
     fixture.autoDetectChanges()
 
-    inputPhone = document.getElementsByClassName('prone')
-    matError = inputPhone[0].getElementsByTagName('mat-error')
+    inputPhone = document.getElementsByClassName('phone')
+    matError = inputPhone[0].getElementsByClassName('phone-erro')
     expect(matError.length).toEqual(0);
   });
 
@@ -107,7 +113,7 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges();
     // obter tag mat-error e verifca a mensagem
     let inputMessage = document.getElementsByClassName('message')
-    let matError = document.getElementsByTagName('mat-error')
+    let matError = document.getElementsByClassName('message-erro')
     expect(matError[0].textContent.trim()).toEqual('A menssagem é obrigatória')
 
 
@@ -116,7 +122,7 @@ describe('ContactComponent', () => {
     fixture.autoDetectChanges()
 
     inputMessage = document.getElementsByClassName('message')
-    matError = inputMessage[0].getElementsByTagName('mat-error')
-    expect(matError.length).toEqual(0);
+    matError = inputMessage[0].getElementsByClassName('message-erro')
+    expect(matError.length).toEqual(1);
   });
 });

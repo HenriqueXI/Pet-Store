@@ -45,17 +45,17 @@
               </div>
           </div>
           <div class="product-prices col-12 col-sm-12 col-md-4 col-lg-4">
-            <div class="price-container">
+            <div *ngIf = "product.promotional_value > 0" class="price-container">
               <div class="value-without-promotion col-md-12">
                   <small>
-                      <del>
+                      <h4>
                           {{product.value | currency: 'BRL'}}
-                      </del>
+                      </h4>
                   </small>
                   <br>
               </div>
               <div class="price promotional-value col-6 col-sm-6 col-md-6 col-lg-6">
-                  {{product.promotional_value | currency: 'BRL'}}
+                  <h5>{{product.promotional_value | currency: 'BRL'}}</h5>
               </div>
               <div class="subscribers col-6 col-sm-6 col-md-6 col-lg-6">
                   Para assinantes
@@ -63,12 +63,18 @@
             </div>
             <br>
             <div class="price-container">
-              <div class="price col-6 col-sm-6 col-md-6 col-lg-6">
+              <div *ngIf="product.promotional_value <= 0" class="price col-6 col-sm-6 col-md-6 col-lg-6">
+                <h4>
                   {{product.value | currency: 'BRL'}}
+                </h4>
               </div>
               <div class="col-6 col-sm-6 col-md-6 col-lg-6 installment">
-                  ou em até {{product.installment_count}} x {{product.value / product.installment_count | currency:
-                  'BRL'}}
+                <p>
+                  ou em até
+                </p>
+                <h5>
+                  {{product.installment_count}} x {{((product.value) / product.installment_count ) | currency: "BRL"}}
+                </h5>
               </div>
             </div>
         <button>ADCIONAR AO CARRINHO</button>
