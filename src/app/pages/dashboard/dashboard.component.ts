@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getProduct(): void{
     this.productService.getProduct()
-    .subscribe(products => this.product = products.slice())
+    .subscribe(products => this.product = products)
   }
 }

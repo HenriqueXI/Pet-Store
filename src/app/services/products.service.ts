@@ -1,3 +1,4 @@
+import { ProductsGetResponse } from './../interfaces/product';
 import { environments } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -45,5 +46,21 @@ export class ProductsService {
         }
       )
     })
+  }
+
+  getProductsList(): Observable<ProductsGetResponse> {
+    return new Observable<ProductsGetResponse>(observer => {
+        // Faça o importe do environment para poder adicionar a url da aplicação
+        this.http.get<ProductsGetResponse>(`${environment.apiUrl}v1/products`).subscribe(
+          products => {
+            observer.next(products);
+            observer.complete();
+          },
+          () => { // Se der algum erro na requisição ira ser chamado esse callback
+            observer.error('error_on_get_products');
+            observer.complete();
+          }
+        )
+    });
   }
 }

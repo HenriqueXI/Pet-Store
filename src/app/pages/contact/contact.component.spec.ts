@@ -6,6 +6,7 @@ import { ContactComponent } from './contact.component';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarMocks } from 'src/app/mocks-service/MatSnackBarMocks';
+import { ProductItemComponent } from 'src/app/components/product-item/product-item.component';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -16,6 +17,7 @@ describe('ContactComponent', () => {
       imports: [ ReactiveFormsModule],
       declarations: [
         ContactComponent,
+        MockComponents(ProductItemComponent),
         MockComponents(
           MatError,
           MatFormField,
@@ -89,26 +91,32 @@ describe('ContactComponent', () => {
   });
 
   it('valide input phone', () => {
-    //não definir valor para o nome
     component.formGroup.patchValue({'phone': ''});
     fixture.autoDetectChanges();
-    // obter tag mat-error e verifca a mensagem
+
     let inputPhone = document.getElementsByClassName('phone')
-    let matError = document.getElementsByClassName('phone-erro')
+    let matError = document.getElementsByClassName('phone-erro-r')
     expect(matError[0].textContent.trim()).toEqual('O Número é obrigatório')
 
 
-    // definir nome valido e verificar se não tem a tag mat-error
-    component.formGroup.patchValue({'phone': 'henrique'})
+    component.formGroup.patchValue({'phone': 'ab920066207'});
+    fixture.autoDetectChanges();
+
+    inputPhone = document.getElementsByClassName('phone')
+    matError = inputPhone[0].getElementsByClassName('phone-erro-v')
+    expect(matError[0].textContent.trim()).toEqual('O Número é inválido')
+
+
+    component.formGroup.patchValue({'phone': '11920066207'})
     fixture.autoDetectChanges()
 
     inputPhone = document.getElementsByClassName('phone')
-    matError = inputPhone[0].getElementsByClassName('phone-erro')
+    matError = inputPhone[0].getElementsByClassName('phone-erro-v')
     expect(matError.length).toEqual(0);
   });
 
   it('valide input message', () => {
-    //não definir valor para o nome
+    //não definir valor para a message
     component.formGroup.patchValue({'message': ''});
     fixture.autoDetectChanges();
     // obter tag mat-error e verifca a mensagem

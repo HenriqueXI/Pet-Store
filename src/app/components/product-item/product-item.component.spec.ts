@@ -1,11 +1,13 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { AnimalType, Product } from './../../interfaces/product';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductItemComponent } from './product-item.component';
-import { MockComponents } from 'ng-mocks';
+import { MockComponents, MockDirective } from 'ng-mocks';
 import { MatIcon } from '@angular/material/icon';
 import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
 import { MatToolbar } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -40,6 +42,7 @@ describe('ProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [
         ProductItemComponent,
         MockComponents(
@@ -52,6 +55,7 @@ describe('ProductItemComponent', () => {
           MatCardTitle,
           MatCard,
           MatCardContent,
+          ProductItemComponent
         )
       ],
 

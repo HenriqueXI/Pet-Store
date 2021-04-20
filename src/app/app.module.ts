@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ProductsComponent } from './pages/products/products.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ProductComponent,
     FooterComponent,
     ContactComponent,
+    ProductsComponent,
 
   ],
   imports: [

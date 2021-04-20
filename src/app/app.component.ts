@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'PetStore';
   menus = [
     {'name': 'Home', 'router': '/'},
-    {'name': 'Contato', 'router': '/contact'}
+    {'name': 'Contato', 'router': '/contact'},
+    {'name': 'Produtos', 'router': '/products'}
   ]
 }

@@ -10,7 +10,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactComponent implements OnInit {
 
   formGroup: FormGroup
+
   EMAIL_REGEXP: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  public PHONE_REGEXP: RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,7 +24,7 @@ export class ContactComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email, Validators.pattern(this.EMAIL_REGEXP)]],
-      phone: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern(this.PHONE_REGEXP)]],
       message: ['', [Validators.required]]
     })
   }

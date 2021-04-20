@@ -24,7 +24,7 @@ export interface Product {
     created_at: string
 }
 
-export interface productGetResponse{
+export interface ProductsGetResponse{
   cursor: string;
   products: Array<Product>;
 }
